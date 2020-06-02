@@ -47,7 +47,6 @@ Now, let's merge them:
 
 `composite -gravity center "f.jpg" \( "h.png" -resize 400x400 \) "f.jpg" "new.png" `
 
-Endless other tricks using (https://www.imagemagick.org/)
 
 Finally, let's put a label:
 `convert new.png -gravity North -font Arial -annotate +0+100  'some text here' newnew.png`
@@ -69,6 +68,8 @@ Then, let's complete the loop:
                  fill white  text 5,25 'How hot is Freddie?' \
                  fill white  text 1,5 '$myvar' " \
           wmark_text_drawn.jpg `
+
+Endless other tricks using (https://www.imagemagick.org/)
 
 ## Some exercises and fun
 
