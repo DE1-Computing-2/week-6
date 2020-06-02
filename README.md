@@ -78,4 +78,5 @@ Endless other tricks using (https://www.imagemagick.org/)
 * Open and play with a payload
 * Play with REST services, and use the UI to see the effects.
 * Open a JSON payload (from the app-layer services) just to see it.
+* Read a JSON object into your web app
 * Convert XML to and from JSON
