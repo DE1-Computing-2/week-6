@@ -29,6 +29,8 @@ Or can prase the string directly using Python json.load:
 
 `curl -s 'http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=YourAPIKey' |  python3 -c "import sys, json; print(json.load(sys.stdin)['main']['temp'])"`
 
+or here's one for Forex (please don;t abuse my key) 
+(http://data.fixer.io/api/latest?access_key=d9f5f84da3c4a1d8c970d21c39c0824b)
 
 Now, let's play around some nice images:
 
