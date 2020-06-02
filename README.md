@@ -3,13 +3,44 @@
 Simple lab on connecting to APIs, getting objects, and storing data
 
 
+Please sign up for the free account in (https://home.openweathermap.org) or (https://register.metoffice.gov.uk/WaveRegistrationClient/public/newaccount.do?service=datapoint) and get an API Key (remember sometimes it takes few mins/hours for API key to be enabled, so do this earlier. OpenWeatherMap emails you the API key when it;'s activated
+
+Now let's test the curret weather:
+`http://api.openweathermap.org/data/2.5/weather?q=london&appid=YourAPIKey`
+
+So, I get:
+`{"coord":{"lon":-0.13,"lat":51.51},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":292.94,"feels_like":290.07,"temp_min":292.04,"temp_max":293.71,"pressure":1020,"humidity":48},"visibility":10000,"wind":{"speed":3.6,"deg":300},"clouds":{"all":97},"dt":1591090621,"sys":{"type":1,"id":1414,"country":"GB","sunrise":1591069687,"sunset":1591128561},"timezone":3600,"id":2643743,"name":"London","cod":200}`
+
+* Try some online JSON parsers (http://json.parser.online.fr/)
+
+Now, I don;t get that unit, so let me try another unit via (https://openweathermap.org/current#data):
+
+`http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=YourAPIKey`
+
+Now I get:
+`{"coord":{"lon":-0.13,"lat":51.51},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":20.11,"feels_like":17.31,"temp_min":18.89,"temp_max":21.11,"pressure":1020,"humidity":48},"visibility":10000,"wind":{"speed":3.6,"deg":300},"clouds":{"all":97},"dt":1591091701,"sys":{"type":1,"id":1414,"country":"GB","sunrise":1591069687,"sunset":1591128561},"timezone":3600,"id":2643743,"name":"London","cod":200}`
+
+
+Let's see what;s the temperature like:
+
+`curl -s 'http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=YourAPIKey' `
+
+Or can prase the string directly using Python json.load:
+
+`curl -s 'http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=YourAPIKey' |  python3 -c "import sys, json; print(json.load(sys.stdin)['main']['temp'])"`
+
+
+Now, let's play around some nice images:
 
 `brew install imagemagic`
 
+Where's Freddie?
 `curl https://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/website2--tojpeg_1523002441553_x1.jpg --output f.jpg `
 
+Or a heart?
 `curl https://www.desicomments.com/wp-content/uploads/2017/07/Hearts-Vortex-Heart.png --output h.png `
 
+Now, let's merge them:
 `composite -compose Dst_Over -geometry 520x320+20+80 f.jpg h.png FH.png`
 
 `composite -compose Dst_Over -geometry 520x320+1050+700 f.jpg h.png FH.png`
@@ -18,10 +49,13 @@ Simple lab on connecting to APIs, getting objects, and storing data
 
 Endless other tricks using (https://www.imagemagick.org/)
 
+Finally:
+
+
 
 ## Some exercises and fun
 
-* Try some online JSON parsers (http://json.parser.online.fr/)
+
 * Open and understand a schema
 * Open and play with a payload
 * Play with REST services, and use the UI to see the effects.
