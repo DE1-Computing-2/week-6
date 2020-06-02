@@ -21,7 +21,7 @@ Now I get:
 `{"coord":{"lon":-0.13,"lat":51.51},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":20.11,"feels_like":17.31,"temp_min":18.89,"temp_max":21.11,"pressure":1020,"humidity":48},"visibility":10000,"wind":{"speed":3.6,"deg":300},"clouds":{"all":97},"dt":1591091701,"sys":{"type":1,"id":1414,"country":"GB","sunrise":1591069687,"sunset":1591128561},"timezone":3600,"id":2643743,"name":"London","cod":200}`
 
 
-Let's see what;s the temperature like:
+Let's see what's the temperature like:
 
 `curl -s 'http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=YourAPIKey' `
 
@@ -49,9 +49,26 @@ Now, let's merge them:
 
 Endless other tricks using (https://www.imagemagick.org/)
 
-Finally:
+Finally, let's put a label:
+`convert new.png -gravity North -font Arial -annotate +0+100  'some text here' newnew.png`
 
+I've messed up ghostscript installation so have to specify the full path 
+`convert new.png -gravity North -font /System/Library/Fonts/HelveticaNeue.ttc -annotate +0+100  'some text here' newnew.png`
 
+Now, Let's make it more fun "
+
+First, let's get the temperature and store as a variable:
+`myvar="$(curl -s 'http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=YourAPIKey' |  python3 -c "import sys, json; print(json.load(sys.stdin)['main']['temp'])") "`
+
+`echo "$myvar"`
+
+Then, let's complete the loop:
+
+`convert new.png -font /System/Library/Fonts/HelveticaNeue.ttc -pointsize 20 \
+          -draw "gravity south \
+                 fill white  text 5,25 'How hot is Freddie?' \
+                 fill white  text 1,5 '$myvar' " \
+          wmark_text_drawn.jpg `
 
 ## Some exercises and fun
 
