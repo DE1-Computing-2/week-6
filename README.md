@@ -11,7 +11,7 @@ curl https://www.desicomments.com/wp-content/uploads/2017/07/Hearts-Vortex-Heart
 
 
 
-composite -compose Dst_Over -geometry 520x320+20+80 f.jpg h.png FH.png
+`composite -compose Dst_Over -geometry 520x320+20+80 f.jpg h.png FH.png`
 
 composite -compose Dst_Over -geometry 520x320+1050+700 f.jpg h.png FH.png
 
