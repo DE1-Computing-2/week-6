@@ -10,14 +10,16 @@ Simple lab on connecting to APIs, getting objects, and storing data
 
 `curl https://www.desicomments.com/wp-content/uploads/2017/07/Hearts-Vortex-Heart.png --output h.png `
 
-
-
 `composite -compose Dst_Over -geometry 520x320+20+80 f.jpg h.png FH.png`
 
 `composite -compose Dst_Over -geometry 520x320+1050+700 f.jpg h.png FH.png`
 
 `composite -gravity center "f.jpg" \( "h.png" -resize 400x400 \) "f.jpg" "new.png" `
 
+Endless other tricks using (https://www.imagemagick.org/)
+
+
+## Some exercises and fun
 
 * Try some online JSON parsers (http://json.parser.online.fr/)
 * Open and understand a schema
