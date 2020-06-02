@@ -78,9 +78,9 @@ Endless other tricks using (https://www.imagemagick.org/)
 
 * Open and understand a schema
 * Open and play with a payload
-* Play with REST services, and use the UI to see the effects.
 * Open a JSON payload (from the app-layer services) just to see it.
 * Read a JSON object into your web app
+* Query an API to convert £20 to Euros from your Web App
 * Convert XML to and from JSON
 
 ** Feeling brave? Try getting some instragram data (my code might be out of date) (https://github.com/haddadi/Instagram)
