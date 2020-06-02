@@ -80,3 +80,5 @@ Endless other tricks using (https://www.imagemagick.org/)
 * Open a JSON payload (from the app-layer services) just to see it.
 * Read a JSON object into your web app
 * Convert XML to and from JSON
+
+** Feeling brave? Try getting some instragram data (my code might be out of date) (https://github.com/haddadi/Instagram)
