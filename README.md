@@ -4,6 +4,7 @@ Simple lab on connecting to APIs, getting objects, and storing data
 
 
 
+`brew install imagemagic`
 
 `curl https://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/website2--tojpeg_1523002441553_x1.jpg --output f.jpg `
 
