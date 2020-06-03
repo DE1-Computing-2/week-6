@@ -65,10 +65,10 @@ First, let's get the temperature and store as a variable:
 
 Then, let's complete the loop:
 
-`convert new.png -font /System/Library/Fonts/HelveticaNeue.ttc -pointsize 20 \
-          -draw "gravity south \
-                 fill white  text 5,25 'How hot is Freddie?' \
-                 fill white  text 1,5 '$myvar' " \
+`convert new.png -font /System/Library/Fonts/HelveticaNeue.ttc -pointsize 20 
+          -draw "gravity south 
+                 fill white  text 5,25 'How hot is Freddie?' 
+                 fill white  text 1,5 '$myvar' " 
           wmark_text_drawn.jpg `
 
 Endless other tricks using (https://www.imagemagick.org/)
